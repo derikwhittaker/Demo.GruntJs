@@ -1,0 +1,11 @@
+{
+  "name": "plsRemember.me",
+  "version": "0.1.0",
+  "devDependencies": {
+    "grunt": "~0.4.3",
+    "grunt-typescript": "~0.2.3",
+    "grunt-contrib-watch": "^0.6.1",
+    "grunt-tsd": "^0.1.0",
+    "grunt-contrib-jshint": "^0.10.0"
+  }
+}

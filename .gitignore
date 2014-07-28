@@ -216,3 +216,6 @@ pip-log.txt
 
 #node
 node_modules/
+
+#webstore
+.idea
