@@ -10,6 +10,9 @@
     },
     "node/node.d.ts": {
       "commit": "85bc00eebb86a1d61b7ecc6d3ec64ecdadfd7d4d"
+    },
+    "socket.io/socket.io.d.ts": {
+      "commit": "85bc00eebb86a1d61b7ecc6d3ec64ecdadfd7d4d"
     }
   }
 }

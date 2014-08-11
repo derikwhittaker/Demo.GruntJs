@@ -23,8 +23,8 @@ module.exports = function (grunt) {
                 }
             },
             files: {
-                src: ['../**/*.js',
-                    '!../grunt/**', '!../typeings/**', '!../node_modules/**']
+                src: ['../src/**/*.js',
+                    '!../grunt/**', '!../typings/**', '!../src/node_modules/**', '!../src/bower_components/**']
             }
         },
         typescript: {
@@ -34,7 +34,7 @@ module.exports = function (grunt) {
                 sourceMap: false
             },
             source: {
-                src: ['../**/*.ts', '!../**/*.d.ts', '!./**/*.d.ts'],
+                src: ['../src/**/*.ts', '!../src/**/*.d.ts', '!../src/node_modules/*.ts', '!./**/*.d.ts'],
                 dest: './'
             }
         },
@@ -54,14 +54,33 @@ module.exports = function (grunt) {
 //                tasks: ['jshint:gruntfile']
 //            },
             source: {
-                files: ['../**/*.ts', '!../**/*.d.ts', '!./**/*.d.ts'],
+                files: ['../src/**/*.ts', '!../src/**/*.d.ts', '!./**/*.d.ts'],
                 tasks: ['typescript', 'jshint']
+            }
+        },
+        nodemon: {
+            dev: {
+                options: {
+                    args: ['dev'],
+                    nodeArgs: ['--debug'],
+                    callback: function (nodemon) {
+                        nodemon.on('log', function (event) {
+                            console.log(event.colour);
+                        });
+                    },
+                    cwd: './',
+                    ignore: ['node_modules/**', '../grunt/**'],
+                    watch: ['../**']
+                    //delay: 5
+                },
+                script: '../src/app.js'
             }
         }
     });
 
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-contrib-jshint');
+    grunt.loadNpmTasks('grunt-nodemon');
 
     grunt.loadNpmTasks('grunt-tsd');
     grunt.loadNpmTasks('grunt-typescript');

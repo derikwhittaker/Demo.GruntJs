@@ -6,6 +6,8 @@
     "grunt-typescript": "~0.2.3",
     "grunt-contrib-watch": "^0.6.1",
     "grunt-tsd": "^0.1.0",
-    "grunt-contrib-jshint": "^0.10.0"
+    "grunt-contrib-jshint": "^0.10.0",
+    "nodemon": "^1.2.1",
+    "grunt-nodemon": "^0.3.0"
   }
 }
